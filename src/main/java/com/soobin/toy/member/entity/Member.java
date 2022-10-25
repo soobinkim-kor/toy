@@ -8,8 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -65,43 +63,5 @@ public class Member {
             return name();
         }
     }
-
-    public String getUsername(){
-        return this.email;
-    }
-//    public String roles;
-//    public List<String> getRoleList() {
-//        if(this.roles.length() > 0) {
-//            return Arrays.asList(this.roles.split(","));
-//        }
-//        return new ArrayList<>();
-//    }
-
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    private List<PostLike> postLikes = new ArrayList<>();
-
-    public void setPostLikes(PostLike postLike) {
-        this.postLikes.add(postLike);
-    }
-
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    private List<CommentLike> commentLikes = new ArrayList<>();
-
-    public void setCommentLikes(CommentLike commentLike) {
-        this.commentLikes.add(commentLike);
-    }
-
-    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    private List<AnswerLike> answerLikes = new ArrayList<>();
-
-    @OneToMany(mappedBy = "member")
-    private List<Subscription> subscriptions = new ArrayList<>();
-    public void setAnswerLikes(AnswerLike answerLike) {
-        this.answerLikes.add(answerLike);
-    }
-
 }
 
