@@ -8,6 +8,8 @@ build/
 ### application.yml ###
 !**/src/main/resources/application-local.yml
 toy/src/main/resources/application-local.yml
+!**/src/main/resources/application-oauth.yml
+toy/src/main/resources/application-oauth.yml
 
 ### STS ###
 .apt_generated
