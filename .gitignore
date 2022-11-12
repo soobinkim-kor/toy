@@ -10,6 +10,8 @@ toy/src/main/resources/application-dev.yml
 !**/src/main/resources/application-dev.yml
 !**/src/main/resources/application-oauth.yml
 toy/src/main/resources/application-oauth.yml
+toy/src/main/resources/application.yml
+!**/src/main/resources/application.yml
 
 ### STS ###
 .apt_generated
